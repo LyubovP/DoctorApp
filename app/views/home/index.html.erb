@@ -1,13 +1,103 @@
-<% if user_signed_in? %>
-  Welcome <strong><%= current_user.email %></strong>
-<% end %>
+<div class="carousel-inner position-relative">
+  <div class="container">
+    <div class="carousel">
+      <div class="single-slider slider-height d-flex align-items-center img-fluid">
+        <%= image_tag 'home/h1_hero.png', class: "d-block w-100"%> 
+        <div class="carousel-caption d-none d-md-block text-start">
+          <h1 class="cd-headline letters scale">We believe your family deserves better care now</h1>
+          <p>After years of doing the same things, we made a bold decision to advance health care for our community</p>
+          <%= link_to "Appointment", "#", class: "btn btn-primary"%> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="carousel-inner position-relative1">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-10">
+          <div class="caption mb-50" >
+            <div class="carousel-tittle mb-35">
+              <h2>Welcome To Our Hospital</h2>
+              <p>There arge many variations ohf pacgssages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.</p>
+            </div>                        
+            <div class="btn mb-30">
+              <a href="#" class="btn btn-primary">Find Doctors</a>
+            </div>
+            <div class="btn mb-30">
+              <a href="#" class="btn btn-secondary">Appointment </a>
+            </div>
+            <div class="btn mb-30">
+              <a href="#" class="btn btn-secondary">Emargency 1 </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <div class="img ">
+            <div class="img imgabout">
+              <%= image_tag 'home/about2.png', class: "d-block w-100"%> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<% if user_signed_in? %>
-  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to 'Sing Up', new_user_registration_path %>
-  <%= link_to 'Sign In', new_user_session_path %>
-<% end %>
+<div class="carousel-inner position-relative1">
+  <div class="container" >
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="section-tittle text-center mb-100">
+                <h2>Our Medical Services</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-2 ">
+        <div class="col-lg-12">
+            <div class="mb-30">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                            <i class="bi bi-speedometer2"></i>
+                            <h4>Dietitian</h4>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <i class="bi bi-heart-pulse"></i>
+                            <h4>Cardiology</h4>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
+                            <i class="bi bi-ear"  ></i>
+                            <h4>ENT Specialists</h4>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Astrology-tab" data-toggle="tab" href="#Astrology" role="tab" aria-controls="contact" aria-selected="false">
+                            <i class="bi bi-cloud-hail"></i>
+                            <h4>Urology</h4>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Neuroanatomy-tab" data-toggle="tab" href="#Neuroanatomy" role="tab" aria-controls="contact" aria-selected="false">
+                            <i class="bi bi-lungs"  ></i>
+                            <h4>Neuroanatomy</h4>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Blood-tab" data-toggle="tab" href="#Blood" role="tab" aria-controls="contact" aria-selected="false">
+                            <i class="bi bi-virus"  ></i>
+                            <h4>Blood Screening</h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+          
