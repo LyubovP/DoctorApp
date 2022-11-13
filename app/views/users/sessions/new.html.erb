@@ -1,0 +1,40 @@
+<section class="vh-100 bg-image"
+  style="background-image: url('https://img.freepik.com/free-vector/soft-blue-mosaic-pattern-background_1409-1907.jpg?w=1380&t=st=1668333306~exp=1668333906~hmac=c4589b4f5e65fedc558798a59a8383fbfa4c1856bef83f8a44ea94c9859f2b04');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Log in</h2>                
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                  <div class="form-outline mb-4">
+                    <%= f.label :email, class: "form-label" %><br />
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg" %>
+                  </div>
+                  
+                  <div class="form-outline mb-4">
+                    <%= f.label :password, class: "form-label" %><br />
+                    <%= f.password_field :password, autocomplete: "current-password", class: "form-control form-control-lg" %>
+                  </div>
+                  
+                  <% if devise_mapping.rememberable? %>
+                    <div class="field">
+                      <%= f.check_box :remember_me %>
+                      <%= f.label :remember_me %>
+                    </div>
+                  <% end %>
+                  
+                  <div class="actions d-flex justify-content-center">
+                    <%= f.submit "Log in", class: 'btn btn-primary' %>
+                  </div>
+                <% end %>
+                
+                <%= render "users/shared/links" %>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
