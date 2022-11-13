@@ -1,0 +1,63 @@
+.position-relative1 {
+    margin-top: 100px;
+}
+
+.col-md-10 {
+    margin-top: 50px;
+}
+
+.h2 , .h4 , .bi, .section-tittle, .text-start, .carousel-tittle , .text-center , .nav-item , .dropdown-item{ 
+    color: #1556b7; 
+}
+
+.section-tittle {
+    padding-bottom: 50px;
+}
+
+.nav {
+    justify-content: space-between;
+    -webkit-box-flex: 14.4%;
+    -ms-flex: 14.4% 0 0px; flex: 14.4% 0 0;
+}
+
+.row-cols-2 {
+    background-color: #e3eff852
+}
+
+.imgabout {
+    width: 100%; 
+    height: auto;
+}
+
+.text-start {
+    top: 50px; 
+    right: 500px; 
+    left: 50px;
+}
+
+.bi {
+    font-size: 70px;  
+    line-height: 1; 
+    margin-bottom: 13px; 
+}
+
+.bi-speedometer2 , .bi-cloud-hail {
+    margin-left: 10px;
+}
+
+.bi-heart-pulse {
+    margin-left: 20px;
+}
+.bi-ear , .bi-lungs , .bi-virus {
+    margin-left: 50px;
+}
+
+.footer-container {
+    margin-top: 100px; 
+    color: #1556b7;
+}
+
+.bi-capsule-pill, .bi-person{
+    font-size: 3rem; 
+    color: #1556b7;
+}

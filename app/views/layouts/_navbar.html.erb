@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top">
+  <div class="container">
+      <%= image_tag 'home/logo.png', class: "navbar-brand"%> 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>    
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <% if current_user.doctor? %>
+                  <i class="bi bi-person"></i>              
+                <% else %>
+                  <i class="bi bi-capsule-pill"></i>
+                 <% end %>   
+              </a>             
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <%= link_to "My settings", "#", class: "dropdown-item" %>
+                </li>
+                <li>
+                  <%= link_to "Help", '/help', class: "dropdown-item"  %>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                </li>
+              </ul>
+            </li>
+          </li>
+        <% else %>
+          </li>
+            <li class="nav-item">
+            <%= link_to "Sing Up", new_user_registration_path, class: "nav-link active btn btn-outline-primary" %>
+          </li>
+          </li>
+            <li class="nav-item">
+            <%= link_to "Sign in", new_user_session_path, class: "nav-link active btn btn-outline-primary" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
