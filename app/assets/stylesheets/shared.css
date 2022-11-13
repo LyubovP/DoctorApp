@@ -57,7 +57,12 @@
     color: #1556b7;
 }
 
-.bi-capsule-pill, .bi-person{
+.bi-capsule-pill, .bi-person {
     font-size: 3rem; 
     color: #1556b7;
 }
+
+.nav-item {
+    margin-right: 10px;
+}
+
