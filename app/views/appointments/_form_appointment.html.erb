@@ -1,0 +1,53 @@
+<div class="contact_form">
+  <%= form_for @appointment do |f| %>
+    <% if current_user.present? %>
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <%= f.label "last_name" %>
+          <%= f.text_field :last_name, class: "height-input-second",
+          disabled: true, value: current_user.profile.last_name %>
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <%= f.label "phone" %>
+          <%= f.text_field :phone_patient, class: "height-input-second",disabled: true,
+          value: current_user.profile.phone%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <%= f.label "email" %>
+          <%= f.email_field :email, class: "height-input-second",
+          disabled: true, value: current_user.email %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <%= f.label "first_name" %>
+          <%= f.text_field :first_name, class: "height-input-second", disabled: true,
+          value: current_user.profile.first_name %>
+        </div>
+      </div>
+      <div class="form-inputs">
+        <%= f.label "Patient", required: true %>
+        <%= f.text_field  :patient_id, :value => current_user.id %>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <%= f.label "Doctor" %>
+        <%= f.select :doctor_id, @doctors.map { |d| [d.email, d.id] }, include_blank: true %>
+      </div>
+      
+    </div>
+    <div class="row padding-message">
+      <div class="col col-md-12 message-nice">
+        <%= f.text_area :message, placeholder: ("message") %>
+      </div>
+    </div>
+    <div class="row text">
+      <div class="col col-md-12">
+        <%= f.submit ("submit"), class: "custom_btn btn-submit" %>
+      </div>
+    </div>
+  <% end %>
+</div>
