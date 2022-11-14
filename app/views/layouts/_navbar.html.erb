@@ -12,14 +12,14 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <% if current_user.doctor? %>
-                  <i class="bi bi-person"></i>              
+                  <i class="bi bi-capsule-pill"></i>              
                 <% else %>
-                  <i class="bi bi-capsule-pill"></i>
+                  <i class="bi bi-person"></i>
                  <% end %>   
               </a>             
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <%= link_to "My settings", "#", class: "dropdown-item" %>
+                  <%= link_to "My settings", edit_user_registration_path, class: "dropdown-item" %>
                 </li>
                 <li>
                   <%= link_to "Help", '/help', class: "dropdown-item"  %>
