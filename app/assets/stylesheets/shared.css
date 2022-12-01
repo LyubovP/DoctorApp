@@ -6,7 +6,7 @@
     margin-top: 50px;
 }
 
-.h2 , .h4 , .bi, .section-tittle, .text-start, .carousel-tittle , .text-center , .nav-item , .dropdown-item{ 
+.h2 , .h4 , .bi, .section-tittle, .text-start, .carousel-tittle , .text-center , .nav-item , .dropdown-item, .form-label{ 
     color: #1556b7; 
 }
 
@@ -66,3 +66,10 @@
     margin-right: 10px;
 }
 
+input.btn.btn-primary.btn-lg {
+    margin-top: 10px;
+}
+
+img.from-left.d-none.d-lg-block {
+    width: 100%;
+}

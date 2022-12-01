@@ -1,18 +1,23 @@
 <table id="example2" class="table table-bordered table-hover text-center">
   <thead>
     <tr class="background-color">
-      <th><%= t "stt" %></th>
-      <th><%= t "doctor_name" %></th>
-      <th><%= t "patient_name" %></th>
-      <th><%= t "day" %></th>
-      <th><%= t "start_time" %></th>
-      <th><%= t "end_time" %></th>
-      <th><%= t "room" %></th>
+      <th><%= t "doctor_email" %></th>
+      <th><%= t "patient_email" %></th>
+      <th><%= t "message" %></th>
+      <th><%= t "create date" %></th>
       <th class="action-head"><%= t "action" %></th>
     </tr>
   </thead>
 
   <tbody>
-    <%= render 'appointments/appointment' %>
+    <% @appointments.each do |appointment| %>
+      <tr class="trow">
+        <td><%= appointment.doctor.email %></td>
+        <td><%= appointment.patient.email %></td>
+        <td><%= appointment.message %></td>
+        <td><%= appointment.created_at %></td>
+        <td><%= link_to 'Show', appointment %></td>        
+      </tr>
+    <% end %>
   </tbody>
 </table>

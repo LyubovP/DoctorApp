@@ -1,0 +1,44 @@
+<br> 
+<% provide :title, t("Appointment") %>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1><%= t "Appointment" %></h1>
+      <div class="breadcroumb_link">
+        <%= link_to t("all appoitments"), appointments_url %>/<%= t "Appointment" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xl-8 col-lg-2">
+      <div class="container my-5">
+        <div class="card bg-light shadow p-3 mb-5 rounded fs-5">
+          <div class="row">
+            <div class="col">
+                <h2 class="text-center">
+                <%= @appointment.message%>
+                </h2>
+            </div>
+          </div>  
+          <div class="row my-1">
+            <div class="col-sm-2">
+                Create date
+            </div>
+            <div class="col-sm-10">
+                <div class="text-center">
+                <%= @appointment.created_at %>
+                </div>
+            </div>
+          </div>
+          <div class="btn-group pb-2">
+            <%= link_to "Back", @root_path, class: "btn btn-secondary position-relative" %>
+            <%= link_to "Edit", edit_appointment_path, class: "btn btn-outline-warning position-relative" %>
+            <%= button_to "Destroy this appointment", appointment_path(@appointment), method: :delete, class: "btn btn-outline-danger position-relative" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

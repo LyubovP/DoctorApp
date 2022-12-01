@@ -1,22 +1,22 @@
+<br> 
 <% provide :title, t("appointment") %>
-<div class="breadvroumb_area">
-  <div class="container">
-    <div class="row text-center">
-      <div class="col">
-        <h1><%= t "appointment" %></h1>
-        <div class="breadcroumb_link">
-          <%= link_to t("home"), root_url %>/<%= t "appointment" %>
-        </div>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1><%= t "appointment" %></h1>
+      <div class="breadcroumb_link">
+        <%= link_to t("home"), root_url %>/<%= t "appointment" %>
       </div>
     </div>
   </div>
 </div>
-<div class="appoinment_form_area p100">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <%= render "appointments/form_appointment" %>
-      </div>
+<div class="container">
+  <div class="row justify-content-end">
+    <div class="col-lg-6 col-md-12">
+      <%= image_tag 'home/contact_form.png', class: "from-left d-none d-lg-block"%> 
+    </div>
+    <div class="col-xl-6 col-lg-6">
+      <%= render "appointments/form_appointment" %>
     </div>
   </div>
 </div>

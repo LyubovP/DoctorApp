@@ -1,0 +1,19 @@
+<br> 
+<% provide :title, t("Edit appointment") %>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1><%= t "Edit appointment" %></h1>
+      <div class="breadcroumb_link">
+        <%= link_to t("all appoitments"), appointments_url %>/<%= t "Edit appointment" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xl-8 col-lg-2">
+      <%= render "appointments/form_appointment" %>
+    </div>
+  </div>
+</div>

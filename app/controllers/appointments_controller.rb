@@ -1,6 +1,13 @@
 class AppointmentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_appointmentpointment, only: %i(update destroy)
+  before_action :find_appointment, only: %i(edit show update)
+
+   def index
+    @appointments = Appointment.all
+  end
+  
+  def show
+  end
 
   def new
     @appointment = Appointment.new
@@ -8,7 +15,9 @@ class AppointmentsController < ApplicationController
     @patients = current_user.id
   end
 
-  def index
+  def edit
+    @doctors = Doctor.where(role: ['doctor']).all
+    @patients = current_user.id
   end
 
   def create
@@ -32,9 +41,9 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
-    if @appointment.destroy
+    if Appointment.destroy(params[:id])
       flash[:success] = t "appointment_canceled"
-      redirect_to request.referer || root_url
+      redirect_to appointments_path
     else
       flash[:notice] = t "not_success"
       redirect_to root_url
@@ -47,8 +56,9 @@ class AppointmentsController < ApplicationController
     params.require(:appointment).permit(:message, :doctor_id, :patient_id)
   end
 
-  def find_appointmentpointment
-    @appointment = current_user.appointment.find(params[:id])
+  def find_appointment
+    @appointment = Appointment.find(params[:id])
+    
     return if @appointment
 
     flash[:danger] = t "not_found"
