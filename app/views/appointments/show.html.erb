@@ -33,7 +33,7 @@
             </div>
           </div>
           <div class="btn-group pb-2">
-            <%= link_to "Back", @root_path, class: "btn btn-secondary position-relative" %>
+            <%= link_to "Back", appointments_path, class: "btn btn-secondary position-relative" %>
             <%= link_to "Edit", edit_appointment_path, class: "btn btn-outline-warning position-relative" %>
             <%= button_to "Destroy this appointment", appointment_path(@appointment), method: :delete, class: "btn btn-outline-danger position-relative" %>
           </div>
