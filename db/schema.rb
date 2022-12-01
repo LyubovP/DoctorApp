@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_13_150117) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_14_193136) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.bigint "patient_id"
+    t.bigint "doctor_id"
+    t.integer "status", default: 0
+    t.time "start_time"
+    t.time "end_time"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string "first_name"
