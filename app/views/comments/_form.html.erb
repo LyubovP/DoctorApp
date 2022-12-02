@@ -1,0 +1,6 @@
+<%= form_with(model: [appointment, appointment.comments.build]) do |form| %>
+  <div class="form-control">
+    <%= form.rich_text_area :body %>
+    <%= form.submit "Answer", class: "btn btn-primary mt-1" %>
+  </div>
+<% end %>

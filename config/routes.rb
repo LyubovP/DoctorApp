@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :patients
   resources :doctors
-  resources :appointments
+  resources :appointments do
+    resources :comments
+  end
 end

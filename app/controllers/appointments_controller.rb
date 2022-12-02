@@ -7,6 +7,7 @@ class AppointmentsController < ApplicationController
   end
   
   def show
+    @comments = @appointment.comments.order(created_at: :desc)
   end
 
   def new
