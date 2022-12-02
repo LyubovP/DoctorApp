@@ -42,3 +42,10 @@
     </div>
   </div>
 </div>
+
+<div class="container">
+  <%= render 'comments/form', appointment: @appointment %>
+  <% @comments.each do |comment| %>
+    <%= render 'comments/comment', appointment: @appointment, comment: comment %>
+  <% end %>
+</div>
