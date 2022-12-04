@@ -35,10 +35,14 @@
     left: 50px;
 }
 
-.bi {
+.bi-person, .bi-capsule-pill {
     font-size: 70px;  
     line-height: 1; 
     margin-bottom: 13px; 
+}
+
+.bi-envelope-plus-fill {
+    font-size: 30px;
 }
 
 .bi-speedometer2 , .bi-cloud-hail {

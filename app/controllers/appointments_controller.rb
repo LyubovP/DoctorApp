@@ -8,6 +8,7 @@ class AppointmentsController < ApplicationController
   
   def show
     @comments = @appointment.comments.order(created_at: :desc)
+    mark_notifications_as_read
   end
 
   def new
@@ -64,5 +65,12 @@ class AppointmentsController < ApplicationController
 
     flash[:danger] = t "not_found"
     redirect_to root_url
-  end  
+  end
+
+  def mark_notifications_as_read
+    if current_user
+      notifications_to_mark_as_read = @appointment.notifications_as_appointment.where(recipient: current_user)
+      notifications_to_mark_as_read.update_all(read_at: Time.zone.now)
+    end
+  end
 end
