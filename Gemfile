@@ -77,3 +77,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'rails-controller-testing'
 end
+
+gem "noticed", "~> 1.6"

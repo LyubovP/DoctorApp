@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :notifications, as: :recipient, dependent: :destroy
   
   accepts_nested_attributes_for :profile
 
