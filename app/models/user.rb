@@ -3,10 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  
   has_one :profile, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :notifications, as: :recipient, dependent: :destroy
+  has_many :categories_users
+  has_many :users, through: :categories_users
+  has_many :categories, through: :categories_users
   
   accepts_nested_attributes_for :profile
 

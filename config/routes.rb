@@ -1,4 +1,5 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do  
+  resources :categories
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: "home#index"
   resources :patients
+  
   resources :doctors
   resources :appointments do
     resources :comments
