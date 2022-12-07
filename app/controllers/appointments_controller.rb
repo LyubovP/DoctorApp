@@ -2,8 +2,11 @@ class AppointmentsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_appointment, only: %i(edit show update)
 
-   def index
-    @appointments = Appointment.all
+  def index
+    if  @appointments = Appointment.where(:patient_id => current_user.id)
+    else
+    @appointments = Appointment.where(:doctor_id => current_user.id)
+    end
   end
   
   def show
@@ -43,7 +46,7 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
-    if Appointment.destroy(params[:id])
+    if Appointment.delete(params[:id])
       flash[:success] = t "appointment_canceled"
       redirect_to appointments_path
     else

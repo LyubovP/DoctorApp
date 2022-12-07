@@ -35,7 +35,13 @@
                     <%= f.label :role, class: "form-label" %><br />
                     <%= f.select :role, User.roles.keys, {}, class: 'form-control form-control-lg' %>
                   </div>
-
+                  <% if current_user.doctor? %>
+                    <div class="form-outline">
+                      <%= f.label :categories, class: "form-label" %><br />
+                      <%= f.collection_select :category_ids, Category.order(:name), :id, :name, {}, {class: "form-control form-control-lg", multiple: true} %>
+                    </div>
+                    <p>There is no category, please create one</p><%= link_to "New category", new_category_path, class: "btn btn-primary"%> 
+                  <% end %>
                   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
                   <% end %>

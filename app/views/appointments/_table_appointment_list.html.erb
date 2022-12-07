@@ -10,14 +10,16 @@
   </thead>
 
   <tbody>
-    <% @appointments.each do |appointment| %>
-      <tr class="trow">
-        <td><%= appointment.doctor.email %></td>
-        <td><%= appointment.patient.email %></td>
-        <td><%= appointment.message %></td>
-        <td><%= appointment.created_at %></td>
-        <td><%= link_to 'Show', appointment %></td>        
-      </tr>
+    <% if @appointments.present? %>
+      <% @appointments.each do |appointment| %>
+        <tr class="trow">
+          <td><%= appointment.doctor.email %></td>
+          <td><%= appointment.patient.email %></td>
+          <td><%= appointment.message %></td>
+          <td><%= appointment.created_at %></td>
+          <td><%= link_to 'Show', appointment %></td>        
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
