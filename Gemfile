@@ -49,6 +49,8 @@ gem "sassc-rails"
 gem "image_processing", "~> 1.2"
 gem 'esbuild-rails', '~> 0.1.4'
 gem 'devise'
+gem "noticed", "~> 1.6"
+gem "aws-sdk-s3"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -77,5 +79,3 @@ group :test do
   gem 'shoulda-matchers'
   gem 'rails-controller-testing'
 end
-
-gem "noticed", "~> 1.6"
