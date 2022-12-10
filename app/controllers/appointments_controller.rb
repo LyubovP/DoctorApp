@@ -3,9 +3,10 @@ class AppointmentsController < ApplicationController
   before_action :find_appointment, only: %i(edit show update)
 
   def index
-    if  @appointments = Appointment.where(:patient_id => current_user.id)
+    if current_user.role == "patient"
+      @appointments = Appointment.where(:patient_id => current_user.id)
     else
-    @appointments = Appointment.where(:doctor_id => current_user.id)
+      @appointments = Appointment.where(:doctor_id => current_user.id)
     end
   end
   
