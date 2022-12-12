@@ -1,6 +1,7 @@
 class AppointmentsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_appointment, only: %i(edit show update)
+  load_and_authorize_resource
 
   def index
     if current_user.role == "patient"

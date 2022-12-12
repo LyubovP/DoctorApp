@@ -334,4 +334,8 @@ ActiveAdmin.setup do |config|
   # config.use_webpacker = true
   config.register_stylesheet 'https://cdn.bootcss.com/trix/1.0.0/trix.css'
   config.register_javascript 'https://cdn.bootcss.com/trix/1.0.0/trix.js'
+
+  config.authorization_adapter = ActiveAdmin::CanCanAdapter
+  config.cancan_ability_class = "Ability"
+  config.on_unauthorized_access = :access_denied
 end
