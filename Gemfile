@@ -53,6 +53,7 @@ gem "noticed", "~> 1.6"
 gem "aws-sdk-s3"
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin.git'
 gem 'active_admin_trix', '~> 0.0.3'
+gem 'cancancan', '~> 1.15'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

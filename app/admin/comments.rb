@@ -25,6 +25,5 @@ ActiveAdmin.register Comment, :as => "AppointmentComment" do
         div resource.body
       end
     end
-  end
-  
+  end  
 end
