@@ -48,7 +48,7 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
-    if Appointment.delete(params[:id])
+    if @appointment.destroy
       flash[:success] = t "appointment_canceled"
       redirect_to appointments_path
     else
