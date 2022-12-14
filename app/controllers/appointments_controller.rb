@@ -30,10 +30,10 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new appointment_params
     if @appointment.save
-      flash[:success] = "appointment_created"
-      redirect_to root_url
+      flash[:success] = "appointment created"
+      redirect_to appointments_url(@appointment)
     else
-      flash[:notice] = "appointment_not_created"
+      flash[:notice] = "appointment not created"
       render :new
     end
   end
@@ -49,10 +49,10 @@ class AppointmentsController < ApplicationController
 
   def destroy
     if @appointment.destroy
-      flash[:success] = t "appointment_canceled"
+      flash[:success] = "appointment delete"
       redirect_to appointments_path
     else
-      flash[:notice] = t "not_success"
+      flash[:notice] = "not success"
       redirect_to root_url
     end
   end
