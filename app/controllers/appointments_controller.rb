@@ -4,11 +4,7 @@ class AppointmentsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    if current_user.role == "patient"
-      @appointments = Appointment.where(:patient_id => current_user.id)
-    else
-      @appointments = Appointment.where(:doctor_id => current_user.id)
-    end
+    @appointments = User.find_by_id(current_user).appointments
   end
   
   def show
@@ -18,29 +14,26 @@ class AppointmentsController < ApplicationController
 
   def new
     @appointment = Appointment.new
-    @doctors = Doctor.where(role: ['doctor']).all
-    @patients = current_user.id
+    @doctor = Doctor.all
   end
 
   def edit
-    @doctors = Doctor.where(role: ['doctor']).all
-    @patients = current_user.id
   end
 
   def create
     @appointment = Appointment.new appointment_params
     if @appointment.save
-      flash[:success] = "appointment created"
+      flash[:success] = "Appointment Created"
       redirect_to appointments_url(@appointment)
     else
-      flash[:notice] = "appointment not created"
+      flash[:notice] = "Something went wrong while trying to create appointment"
       render :new
     end
   end
 
   def update
     if @appointment.update(appointment_params)
-      flash[:notice] = "appointment has been updated"
+      flash[:notice] = "Appointment has been Updated"
     else
       render :edit
     end
@@ -49,10 +42,10 @@ class AppointmentsController < ApplicationController
 
   def destroy
     if @appointment.destroy
-      flash[:success] = "appointment delete"
+      flash[:success] = "Appointment Deleted"
       redirect_to appointments_path
     else
-      flash[:notice] = "not success"
+      flash[:notice] = "Appointment deletion was unsuccessful"
       redirect_to root_url
     end
   end
@@ -68,7 +61,7 @@ class AppointmentsController < ApplicationController
     
     return if @appointment
 
-    flash[:danger] = t "not_found"
+    flash[:danger] = t "Appointment finding was unsuccessful"
     redirect_to root_url
   end
 

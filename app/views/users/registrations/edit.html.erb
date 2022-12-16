@@ -31,10 +31,11 @@
                     <%= f.email_field :email, autocomplete: "email" , class: "form-control form-control-lg" %>
                   </div>
 
-                  <div class="form-outline">
-                    <%= f.label :role, class: "form-label" %><br />
-                    <%= f.select :role, User.roles.keys, {}, class: 'form-control form-control-lg' %>
+                  <div class="form-outline mb-4">
+                    <%= f.label :type, class: "form-label" %><br />
+                    <%= f.select :type, ["Patient","Doctor"], {}, class: 'form-control form-control-lg' %>
                   </div>
+
                   <% if current_user.doctor? %>
                     <div class="form-outline">
                       <%= f.label :categories, class: "form-label" %><br />

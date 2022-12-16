@@ -13,7 +13,7 @@
     <% if @appointments.present? %>
       <% @appointments.each do |appointment| %>
         <tr class="trow">
-          <td><%= appointment.doctor.profile.last_name %></td>
+          <td><%= appointment.doctor.email %></td>
           <td><%= appointment.patient.profile.last_name %></td>
           <td><%= appointment.message %></td>
           <td><%= appointment.created_at %></td>

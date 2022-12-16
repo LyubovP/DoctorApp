@@ -17,13 +17,12 @@ class User < ApplicationRecord
 
   validates :email, presence: true, length: {maximum: 255},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
-  validates :password, presence: true, length: {minimum: 6},
-    allow_nil: true
+  validates :password, presence: true, allow_nil: true
 
-  enum role: {patient: 0, doctor: 1}
-
-  after_initialize :set_default_role, :if => :new_record?
-  def set_default_role
-    self.role ||= :patient
+  def patient?
+    type == 'Patient'
+  end
+  def doctor?
+    type == 'Doctor'
   end
 end
