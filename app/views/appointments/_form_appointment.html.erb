@@ -39,7 +39,7 @@
         <div class="form-group">
           <div class="col-md-8 offset-md-2">
             <%= f.label "doctor", class: "form-label"%>
-            <%= f.select :doctor_id, @doctors.map { |d| [d.profile.first_name + d.profile.last_name, d.id] }, {include_blank: true}, {class: "form-control"}%>
+            <%= f.select :doctor_id, @doctor.map { |d| [d.email, d.id] }, {include_blank: true}, {class: "form-control"}%>
           </div> 
         </div>
         <div class="form-group">

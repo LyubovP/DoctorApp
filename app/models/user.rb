@@ -13,12 +13,16 @@ class User < ApplicationRecord
   
   accepts_nested_attributes_for :profile
 
-  validates :email, presence: true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  enum role: {patient: 0, doctor: 1}
+  validates :email, presence: true, length: {maximum: 255},
+    format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
+  validates :password, presence: true, allow_nil: true
 
-  after_initialize :set_default_role, :if => :new_record?
-  def set_default_role
-    self.role ||= :patient
+  def patient?
+    type == 'Patient'
+  end
+  def doctor?
+    type == 'Doctor'
   end
 end

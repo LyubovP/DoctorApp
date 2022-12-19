@@ -1,4 +1,4 @@
-.position-relative1 {
+.position-relative1, .container_appointment_list, .card {
     margin-top: 100px;
 }
 
@@ -76,4 +76,8 @@ input.btn.btn-primary.btn-lg {
 
 img.from-left.d-none.d-lg-block {
     width: 100%;
+}
+
+.alert {
+    margin-top: 80px;
 }

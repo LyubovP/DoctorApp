@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:role, :category_ids=>[], profile_attributes: %i[first_name last_name phone]])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:role, :category_ids=>[], profile_attributes: %i[first_name last_name phone]])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:type, :category_ids=>[], profile_attributes: %i[first_name last_name phone]])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:type, :category_ids=>[], profile_attributes: %i[first_name last_name phone]])
   end
 end
