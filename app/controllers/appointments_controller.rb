@@ -18,6 +18,7 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
+    @doctor = Doctor.all
   end
 
   def create
@@ -53,7 +54,7 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:message, :doctor_id, :patient_id)
+    params.require(:appointment).permit(:message, :doctor_id).merge(patient_id: current_user.id)
   end
 
   def find_appointment

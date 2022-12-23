@@ -23,7 +23,11 @@ RSpec.describe "/categories", type: :request do
   let(:invalid_attributes) {
     skip("Add a hash of attributes invalid for your model")
   }
-
+  let(:user) { create(:doctor) }
+  before(:each) do
+    sign_in user
+  end 
+  
   describe "GET /index" do
     it "renders a successful response" do
       Category.create! valid_attributes

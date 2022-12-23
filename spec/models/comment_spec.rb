@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to(:appointment) }
+  it { should belong_to(:user) }
+  it { should have_rich_text(:body) }
 end

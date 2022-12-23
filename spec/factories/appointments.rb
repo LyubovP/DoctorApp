@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :appointment do
-    patient
-    doctor
-    message { Faker::Hipster.sentence(500) }
+    association :patient, factory: :user
+    association :doctor, factory: :user    
+    
+    message       { Faker::Lorem.sentence(500) }
   end
 end
