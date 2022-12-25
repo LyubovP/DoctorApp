@@ -72,6 +72,7 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'annotate'
 end
 
 group :test do
@@ -81,4 +82,5 @@ group :test do
   gem "webdrivers"
   gem 'shoulda-matchers'
   gem 'rails-controller-testing'
+  gem "simplecov", require: false
 end
