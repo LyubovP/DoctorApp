@@ -17,7 +17,9 @@
 #  index_admin_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 FactoryBot.define do
-  factory :admin_user do
-    
+  factory :admin_user do    
+    email { "admin@example.com"}
+    password { "password" }
+    password_confirmation { password }
   end
 end

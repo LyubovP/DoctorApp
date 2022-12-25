@@ -21,9 +21,11 @@
 require 'rails_helper'
 
 RSpec.describe Profile, type: :model do
-  it { should belong_to(:user) }
+  describe 'Relationships' do
+    it { should belong_to(:user) }
+  end
 
-  context 'validation tests' do
+  describe 'Validations' do
     it 'ensures first name presence' do
       profile = Profile.new(last_name: 'Last', phone: '1234567890').save
       expect(profile).to eq(false)

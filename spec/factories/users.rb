@@ -19,18 +19,15 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 FactoryBot.define do
-  factory :patient, class: User do
+  factory :user do
     email { Faker::Internet.email }
-    password { Faker::Internet.password }
-    password_confirmation { password }
+    password { 'Password1!' }
     admin { false}
-    type { "Patient" }
-  end
-  factory :doctor, class: User do
-    email { Faker::Internet.email }
-    password { Faker::Internet.password }
-    password_confirmation { password }
-    admin { false}
-    type { "Doctor" }
+    factory :doctor do
+        type { 'Doctor' }
+    end
+    factory :patient do
+       type { 'Patient' }
+    end
   end
 end
