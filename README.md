@@ -2,7 +2,7 @@
 
 # Welcome to the Doctor App 👋
 
-- ⭐️ https://desolate-badlands-82774.herokuapp.com/
+- ⭐️ https://morning-waters-30595.herokuapp.com/
 
 ## Installation
 * Start the project locally
